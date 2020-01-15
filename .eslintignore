@@ -1,0 +1,2 @@
+# Ignores code not controlled by this repo
+/node_modules/*
