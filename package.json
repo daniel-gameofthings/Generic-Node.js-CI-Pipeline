@@ -1,50 +1,61 @@
 {
-  "name": "generic-node.js-ci-pipeline",
-  "version": "1.0.0",
-  "description": "This project exists to show off a variety of CI & related tools with different configs such as Husky (Git Hooks), Prettier (Code Formatter), ESLint and others",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/daniel-gameofthings/Generic-Node.js-CI-Pipeline.git"
-  },
-  "keywords": [
-    "husky",
-    "prettier",
-    "eslint"
-  ],
-  "author": "Daniel Allison",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/daniel-gameofthings/Generic-Node.js-CI-Pipeline/issues"
-  },
-  "homepage": "https://github.com/daniel-gameofthings/Generic-Node.js-CI-Pipeline#readme",
-  "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^2.16.0",
-    "@typescript-eslint/parser": "^2.16.0",
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.9.0",
-    "eslint-config-standard": "^14.1.0",
-    "eslint-plugin-import": "^2.20.0",
-    "eslint-plugin-node": "^11.0.0",
-    "eslint-plugin-prettier": "^3.1.2",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1",
-    "husky": "^4.0.10",
-    "lint-staged": "^9.5.0",
-    "prettier": "^1.19.1",
-    "prettier-eslint": "^9.0.1"
-  },
-  "lint-staged": {
-    "*.{ts,tsx,js,jsx}": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.{htm,html,css,scss,less,graphql,json,md,yaml,yml}": [
-      "prettier --write",
-      "git add"
-    ]
-  }
+	"name": "generic-node.js-ci-pipeline",
+	"version": "1.0.0",
+	"description": "This project exists to show off a variety of CI & related tools with different configs such as Husky (Git Hooks), Prettier (Code Formatter), ESLint and others",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"cm": "git cz"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/daniel-gameofthings/Generic-Node.js-CI-Pipeline.git"
+	},
+	"keywords": [
+		"husky",
+		"prettier",
+		"eslint"
+	],
+	"author": "Daniel Allison",
+	"license": "Apache-2.0",
+	"bugs": {
+		"url": "https://github.com/daniel-gameofthings/Generic-Node.js-CI-Pipeline/issues"
+	},
+	"homepage": "https://github.com/daniel-gameofthings/Generic-Node.js-CI-Pipeline#readme",
+	"devDependencies": {
+		"@commitlint/cli": "^8.3.5",
+		"@commitlint/config-conventional": "^8.3.4",
+		"@typescript-eslint/eslint-plugin": "^2.16.0",
+		"@typescript-eslint/parser": "^2.16.0",
+		"commitizen": "^4.0.3",
+		"cz-conventional-changelog": "^3.0.2",
+		"eslint": "^6.8.0",
+		"eslint-config-prettier": "^6.9.0",
+		"eslint-config-standard": "^14.1.0",
+		"eslint-plugin-import": "^2.20.0",
+		"eslint-plugin-node": "^11.0.0",
+		"eslint-plugin-prettier": "^3.1.2",
+		"eslint-plugin-promise": "^4.2.1",
+		"eslint-plugin-standard": "^4.0.1",
+		"husky": "^4.0.10",
+		"lint-staged": "^9.5.0",
+		"prettier": "^1.19.1",
+		"prettier-eslint": "^9.0.1"
+	},
+	"lint-staged": {
+		"*.{ts,tsx,js,jsx}": [
+			"npx prettier --write",
+			"npx eslint --fix",
+			"git add"
+		],
+		"*.{htm,html,css,scss,less,graphql,json,md,yaml,yml}": [
+			"npx prettier --write",
+			"git add"
+		]
+	},
+	"config": {
+		"commitizen": {
+			"path": "./node_modules/cz-conventional-changelog"
+		}
+	}
 }

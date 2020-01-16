@@ -1,4 +1,4 @@
 # Ignores code not controlled by this repo
-/node_modules/*
+/node_modules
 # Purposely ignored to avoid accidental fixes
 /ugly.js
